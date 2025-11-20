@@ -9,26 +9,26 @@ Implementamos um Sistema de Reserva Simplificado (similar a "booking" ou "Airbnb
 
 - Estratégia de Testes: Aplicação prática da Pirâmide de Testes. </br></br>
 
-
 ⚙️ Instruções de Setup
 Para clonar e rodar este Estudo de Caso de TDD, siga estes passos simples. (É necessário ter o Node.js e o Git instalados).
 
 1. Clonar o Projeto
-Abra seu terminal, clone o repositório e navegue até a pasta:
+   Abra seu terminal, clone o repositório e navegue até a pasta:
 
 ```bash
 git clone https://github.com/thayvitareli/booking_tdd.git
 ```
 
 2. Instalar Dependências
-Instale os pacotes necessários :
+   Instale os pacotes necessários :
+
 ```bash
-  npm install 
+  npm install
 ```
 
+3. Rodar os Testes
+   Execute a suíte de testes:
 
-3. Rodar os Testes 
-Execute a suíte de testes:
 ```bash
   npm test
 ```

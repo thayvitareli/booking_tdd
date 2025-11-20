@@ -10,13 +10,12 @@ export class UserService {
   }
 
   async save(dto: CreateUserDTO) {
-    try{
+    try {
+      const user = new User(uuidv4(), dto.name);
 
-      const user = new User(uuidv4(), dto.name)
-      
       await this.userRepository.save(user);
-    }catch(err:any){
-      throw new Error(err)
+    } catch (err: any) {
+      throw new Error(err);
     }
   }
 }

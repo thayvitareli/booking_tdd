@@ -14,23 +14,21 @@ export class UserController {
 
   async createUser(req: Request, res: Response): Promise<Response> {
     try {
-     
-      if(!req.body.name) throw new Error('O campo nome é obrigatório.')
+      if (!req.body.name) throw new Error("O campo nome é obrigatório.");
 
       const dto: CreateUserDTO = {
         name: req.body.name,
       };
 
-       await this.userService.save(dto);
+      await this.userService.save(dto);
 
       return res.status(201).json({
         message: "User created successfully",
-       });
+      });
     } catch (error: any) {
       return res
         .status(400)
         .json({ message: error.message || "An unexpected error occurred" });
     }
   }
-
 }

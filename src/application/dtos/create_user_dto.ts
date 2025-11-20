@@ -1,3 +1,3 @@
 export interface CreateUserDTO {
-  name:string;
+  name: string;
 }
