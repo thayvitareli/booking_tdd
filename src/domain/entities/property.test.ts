@@ -10,7 +10,7 @@ describe("Property Entity", () => {
       "Casa de praia",
       "Uma bela casa na praia",
       4,
-      200
+      200,
     );
 
     expect(property.getId()).toBe("1");
@@ -44,7 +44,7 @@ describe("Property Entity", () => {
     const property = new Property("1", "Apartamento", "Descrição", 2, 100);
     const dateRange = new DateRange(
       new Date("2024-12-10"),
-      new Date("2024-12-16")
+      new Date("2024-12-16"),
     );
     const totalPrice = property.calculateTotalPrice(dateRange);
     expect(totalPrice).toBe(600);
@@ -54,7 +54,7 @@ describe("Property Entity", () => {
     const property = new Property("1", "Apartamento", "Descrição", 2, 100);
     const dateRange = new DateRange(
       new Date("2024-12-10"),
-      new Date("2024-12-17")
+      new Date("2024-12-17"),
     );
     const totalPrice = property.calculateTotalPrice(dateRange);
     expect(totalPrice).toBe(630); // 7 noites * 100 *0.9 = 630
@@ -65,12 +65,12 @@ describe("Property Entity", () => {
     const user = new User("1", "Maria Silva");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
 
     const dateRange2 = new DateRange(
       new Date("2024-12-22"),
-      new Date("2024-12-27")
+      new Date("2024-12-27"),
     );
 
     new Booking("1", property, user, dateRange, 2);

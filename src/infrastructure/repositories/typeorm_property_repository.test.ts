@@ -34,7 +34,7 @@ describe("TypeORMPropertyRepository", () => {
       "Casa na Praia",
       "Vista para o mar",
       6,
-      200
+      200,
     );
 
     await propertyRepository.save(property);
@@ -49,7 +49,7 @@ describe("TypeORMPropertyRepository", () => {
       "Casa na Praia",
       "Vista para o mar",
       6,
-      200
+      200,
     );
     await propertyRepository.save(property);
 

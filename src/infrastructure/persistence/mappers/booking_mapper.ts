@@ -16,7 +16,7 @@ export class BookingMapper {
       property || PropertyMapper.toDomain(entity.property),
       guest,
       dateRange,
-      entity.guestCount
+      entity.guestCount,
     );
 
     booking["totalPrice"] = Number(entity.totalPrice);
@@ -26,20 +26,19 @@ export class BookingMapper {
   }
 
   static toPersistence(domain: Booking): BookingEntity {
-    try{
-
-    const entity = new BookingEntity();
-    entity.id = domain.getId();
-    entity.property = PropertyMapper.toPersistence(domain.getProperty());
-    entity.guest = UserMapper.toPersistence(domain.getGuest());
-    entity.startDate = domain.getDateRange().getStartDate();
-    entity.endDate = domain.getDateRange().getEndDate();
-    entity.guestCount = domain.getGuestCount();
-    entity.totalPrice = domain.getTotalPrice();
-    entity.status = domain.getStatus();
-    return entity;
-    }catch(err:any){
-      throw new Error(err)
+    try {
+      const entity = new BookingEntity();
+      entity.id = domain.getId();
+      entity.property = PropertyMapper.toPersistence(domain.getProperty());
+      entity.guest = UserMapper.toPersistence(domain.getGuest());
+      entity.startDate = domain.getDateRange().getStartDate();
+      entity.endDate = domain.getDateRange().getEndDate();
+      entity.guestCount = domain.getGuestCount();
+      entity.totalPrice = domain.getTotalPrice();
+      entity.status = domain.getStatus();
+      return entity;
+    } catch (err: any) {
+      throw new Error(err);
     }
   }
 }

@@ -8,7 +8,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "João Silva");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
 
     const booking = new Booking("1", property, user, dateRange, 2);
@@ -25,7 +25,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-10"),
-      new Date("2024-12-15")
+      new Date("2024-12-15"),
     );
 
     expect(() => {
@@ -38,7 +38,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-10"),
-      new Date("2024-12-15")
+      new Date("2024-12-15"),
     );
 
     expect(() => {
@@ -52,7 +52,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-01"),
-      new Date("2024-12-10")
+      new Date("2024-12-10"),
     );
 
     // Act
@@ -68,12 +68,12 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-01"),
-      new Date("2024-12-10")
+      new Date("2024-12-10"),
     );
     const booking = new Booking("1", property, user, dateRange, 4);
     const dateRange2 = new DateRange(
       new Date("2024-12-02"),
-      new Date("2024-12-09")
+      new Date("2024-12-09"),
     );
 
     expect(() => {
@@ -86,7 +86,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-22")
+      new Date("2024-12-22"),
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
@@ -102,7 +102,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
@@ -118,7 +118,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
     const booking = new Booking("1", property, user, dateRange, 4);
 
@@ -134,7 +134,7 @@ describe("Booking Entity", () => {
     const user = new User("1", "José Santos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
     const booking = new Booking("1", property, user, dateRange, 4);
     const currentDate = new Date("2024-12-15");

@@ -10,12 +10,12 @@ export class BookingService {
   constructor(
     private readonly bookingRepository: BookingRepository,
     private readonly propertyService: PropertyService,
-    private readonly userService: UserService
+    private readonly userService: UserService,
   ) {}
 
   async createBooking(dto: CreateBookingDTO): Promise<Booking> {
     const property = await this.propertyService.findPropertyById(
-      dto.propertyId
+      dto.propertyId,
     );
     if (!property) {
       throw new Error("Propriedade não encontrada.");
@@ -33,7 +33,7 @@ export class BookingService {
       property,
       guest,
       dateRange,
-      dto.guestCount
+      dto.guestCount,
     );
 
     await this.bookingRepository.save(booking);

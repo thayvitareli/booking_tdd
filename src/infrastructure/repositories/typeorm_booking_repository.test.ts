@@ -23,7 +23,7 @@ describe("TypeORMBookingRepository", () => {
     });
     await dataSource.initialize();
     bookingRepository = new TypeORMBookingRepository(
-      dataSource.getRepository(BookingEntity)
+      dataSource.getRepository(BookingEntity),
     );
   });
 
@@ -49,7 +49,7 @@ describe("TypeORMBookingRepository", () => {
       "Casa na Praia",
       "Vista para o mar",
       6,
-      200
+      200,
     );
 
     const userEntity = userRepository.create({
@@ -61,7 +61,7 @@ describe("TypeORMBookingRepository", () => {
     const user = new User("1", "Carlos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
 
     const booking = new Booking("1", property, user, dateRange, 4);
@@ -98,7 +98,7 @@ describe("TypeORMBookingRepository", () => {
       "Casa na Praia",
       "Vista para o mar",
       6,
-      200
+      200,
     );
 
     const userEntity = userRepository.create({
@@ -110,7 +110,7 @@ describe("TypeORMBookingRepository", () => {
     const user = new User("1", "Carlos");
     const dateRange = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
 
     const booking = new Booking("1", property, user, dateRange, 4);

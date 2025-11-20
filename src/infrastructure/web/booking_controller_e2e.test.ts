@@ -36,13 +36,13 @@ beforeAll(async () => {
   await dataSource.initialize();
 
   bookingRepository = new TypeORMBookingRepository(
-    dataSource.getRepository(BookingEntity)
+    dataSource.getRepository(BookingEntity),
   );
   propertyRepository = new TypeORMPropertyRepository(
-    dataSource.getRepository(PropertyEntity)
+    dataSource.getRepository(PropertyEntity),
   );
   userRepository = new TypeORMUserRepository(
-    dataSource.getRepository(UserEntity)
+    dataSource.getRepository(UserEntity),
   );
 
   propertyService = new PropertyService(propertyRepository);
@@ -50,7 +50,7 @@ beforeAll(async () => {
   bookingService = new BookingService(
     bookingRepository,
     propertyService,
-    userService
+    userService,
   );
 
   bookingController = new BookingController(bookingService);
@@ -144,7 +144,7 @@ describe("BookingController", () => {
 
     expect(response.status).toBe(400);
     expect(response.body.message).toBe(
-      "O número de hóspedes deve ser maior que zero."
+      "O número de hóspedes deve ser maior que zero.",
     );
   });
 
@@ -173,7 +173,7 @@ describe("BookingController", () => {
     const bookingId = response.body.booking.id;
 
     const cancelResponse = await request(app).post(
-      `/bookings/${bookingId}/cancel`
+      `/bookings/${bookingId}/cancel`,
     );
 
     expect(cancelResponse.status).toBe(200);

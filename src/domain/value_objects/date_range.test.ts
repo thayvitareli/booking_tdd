@@ -34,12 +34,12 @@ describe("DateRange Value Object", () => {
   it("deve verificar se dois intervalos de datas se sobrepõem", () => {
     const dateRange1 = new DateRange(
       new Date("2024-12-20"),
-      new Date("2024-12-25")
+      new Date("2024-12-25"),
     );
 
     const dateRange2 = new DateRange(
       new Date("2024-12-22"),
-      new Date("2024-12-27")
+      new Date("2024-12-27"),
     );
 
     const overlaps = dateRange1.overlaps(dateRange2);

@@ -29,7 +29,7 @@ describe("PropertyService", () => {
       "Test Property",
       "Test Description",
       4,
-      100
+      100,
     );
     await fakePropertyRepository.save(newProperty);
 

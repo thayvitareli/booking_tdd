@@ -19,7 +19,7 @@ export class Booking {
     property: Property,
     guest: User,
     dateRange: DateRange,
-    guestCount: number
+    guestCount: number,
   ) {
     if (guestCount <= 0) {
       throw new Error("O número de hóspedes deve ser maior que zero.");
@@ -28,7 +28,7 @@ export class Booking {
 
     if (!property.isAvailable(dateRange)) {
       throw new Error(
-        "A propriedade não está disponível para o período selecionado."
+        "A propriedade não está disponível para o período selecionado.",
       );
     }
 

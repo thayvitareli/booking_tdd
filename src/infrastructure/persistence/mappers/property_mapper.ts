@@ -3,17 +3,16 @@ import { PropertyEntity } from "../entities/property_entity";
 
 export class PropertyMapper {
   static toDomain(entity: PropertyEntity): Property {
-    try{
-
+    try {
       return new Property(
         entity.id,
         entity.name,
         entity.description,
         entity.maxGuests,
-        Number(entity.basePricePerNight)
+        Number(entity.basePricePerNight),
       );
-    }catch(err:any){
-      throw new Error(err)
+    } catch (err: any) {
+      throw new Error(err);
     }
   }
 
