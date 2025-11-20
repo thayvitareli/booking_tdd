@@ -17,4 +17,16 @@ export class PropertyService {
     
     return property
   }
+
+   async validateCreateDto(dto:CreatePropertyDTO): Promise<void> {
+ if(!dto.name) throw new Error('O nome da propriedade é obrigatório.')
+
+      if(dto.maxGuests <= 0) throw new Error('A capacidade máxima deve ser maior que zero.')
+
+      if(!dto.basePricePerNight) throw new Error('O preço base por noite é obrigatório')
+
+      if(dto.basePricePerNight < 0) throw new Error('O preço base por noite deve ser maior que zero')
+
+   
+  }
 }
