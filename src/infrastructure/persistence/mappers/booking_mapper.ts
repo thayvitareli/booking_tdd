@@ -1,3 +1,4 @@
+import { ERROR } from "sqlite3";
 import { Booking } from "../../../domain/entities/booking";
 import { Property } from "../../../domain/entities/property";
 import { DateRange } from "../../../domain/value_objects/date_range";
@@ -25,6 +26,8 @@ export class BookingMapper {
   }
 
   static toPersistence(domain: Booking): BookingEntity {
+    try{
+
     const entity = new BookingEntity();
     entity.id = domain.getId();
     entity.property = PropertyMapper.toPersistence(domain.getProperty());
@@ -35,5 +38,8 @@ export class BookingMapper {
     entity.totalPrice = domain.getTotalPrice();
     entity.status = domain.getStatus();
     return entity;
+    }catch(err:any){
+      throw new Error(err)
+    }
   }
 }
