@@ -1,4 +1,5 @@
 import { Property } from '../../../domain/entities/property'
+import { PropertyEntity } from '../entities/property_entity'
 import {PropertyMapper} from './property_mapper'
 
 describe('Property Mapper', ()=> {
@@ -12,6 +13,9 @@ describe('Property Mapper', ()=> {
             name:'Casa de praia',
             bookings:[]
         })
+
+      expect(property).toBeInstanceOf(Property)
+
 
         expect(property.getId()).toBe('1')
         expect(property.getName()).toBe('Casa de praia')
@@ -39,6 +43,7 @@ it("deve converter Property para PropertyEntity corretamente",()=>{
 
     const entity = PropertyMapper.toPersistence(property)
 
+     expect(entity).toBeInstanceOf(PropertyEntity)
         expect(entity.id).toBe('1')
         expect(entity.name).toBe('Casa de praia')
         expect(entity.maxGuests).toBe(5)
