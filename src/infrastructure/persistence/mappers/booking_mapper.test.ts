@@ -38,6 +38,31 @@ describe("Booking Mapper", () => {
     expect(booking).toBeInstanceOf(Booking);
   });
 
+   it("deve lançar erro de validação ao faltar campos obrigatórios no BookingEntity", () => {
+    const property = {
+      validateGuestCount: jest.fn(),
+      isAvailable: jest.fn().mockReturnValue(true),
+      calculateTotalPrice: jest.fn().mockReturnValue(100),
+      addBooking: jest.fn()
+    } as unknown as Property;
+
+    const guest = new User("1", "John");
+
+    const dateRange = new DateRange(new Date(), new Date());
+
+    const booking = new Booking(
+      "1",
+      property,
+      guest,
+      dateRange,
+      1
+    );
+
+    jest.spyOn(booking, "getProperty").mockReturnValue(null as any);
+
+    expect(() => BookingMapper.toPersistence(booking)).toThrow();
+  });
+
   it("deve converter Booking para BookingEntity corretamente", () => {
     const startDate = new Date("2025-20-11");
     const endDate = new Date("2025-25-11");
